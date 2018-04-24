@@ -198,6 +198,7 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	
 	<modules>
 		<module>kabouros-common</module>
 		<module>kabouros-cassandra</module>
