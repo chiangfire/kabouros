@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.firecode</groupId>
 	<artifactId>kabouros</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -39,17 +39,17 @@
 			<dependency>
 				<groupId>com.firecode</groupId>
 				<artifactId>kabouros-common</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<version>0.0.2-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>com.firecode</groupId>
 				<artifactId>kabouros-cassandra</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<version>0.0.2-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>com.firecode</groupId>
 				<artifactId>kabouros-gateway</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<version>0.0.2-SNAPSHOT</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
