@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.0.RELEASE</version>
+		<relativePath />
+	</parent>
+	<groupId>com.firecode</groupId>
+	<artifactId>kabouros</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+		<maven-enforcer-plugin.version>1.4.1</maven-enforcer-plugin.version>
+		<maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
+		<maven-install-plugin.version>2.5.2</maven-install-plugin.version>
+		<maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+		<maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+		<maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
+		<lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Finchley.M9</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.firecode</groupId>
+				<artifactId>kabouros-common</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.firecode</groupId>
+				<artifactId>kabouros-cassandra</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.firecode</groupId>
+				<artifactId>kabouros-gateway</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/libs-milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<profiles>
+		<profile>
+			<id>java8</id>
+			<activation>
+				<jdk>${java.version}</jdk>
+			</activation>
+			<properties>
+				<javadoc.parameters>-Xdoclint:none</javadoc.parameters>
+			</properties>
+		</profile>
+		<profile>
+			<id>release-sign-artifacts</id>
+			<activation>
+				<property>
+					<name>gpg.sign</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<!-- 自动完成签名 -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+								<configuration>
+									<useAgent>false</useAgent>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<showWarnings>true</showWarnings>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<executions>
+					<!-- 检查依赖冲突 -->
+					<execution>
+						<id>enforce</id>
+						<configuration>
+							<rules>
+								<dependencyConvergence />
+							</rules>
+						</configuration>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<!-- 跳过测试，等同 "-Dmaven.test.skip=true" -->
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+			<!-- 打包时自动将jar和pom安装到本地仓库 -->
+			<plugin>
+				<artifactId>maven-install-plugin</artifactId>
+				<configuration>
+					<createChecksum>true</createChecksum>
+				</configuration>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!-- 自定义M2E生命周期 -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.apache.maven.plugins</groupId>
+										<artifactId>maven-enforcer-plugin</artifactId>
+										<versionRange>[${lifecycle-mapping.version},)</versionRange>
+										<goals>
+											<goal>enforce</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	<modules>
+		<module>kabouros-common</module>
+		<module>kabouros-cassandra</module>
+		<module>kabouros-gateway</module>
+	</modules>
+</project>

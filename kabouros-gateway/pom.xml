@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.firecode</groupId>
+		<artifactId>kabouros</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>kabouros-gateway</artifactId>
+	<packaging>jar</packaging>
+	<name>kabouros-gateway</name>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.firecode</groupId>
+			<artifactId>kabouros-common</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<!-- 打包 source.jar -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+							<excludes>
+								<exclude>*.jar</exclude>
+							</excludes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- 生成java doc -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<additionalparam>${javadoc.parameters}</additionalparam>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
