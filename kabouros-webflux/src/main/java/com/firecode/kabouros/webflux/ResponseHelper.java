@@ -1,4 +1,4 @@
-package com.firecode.kabouros.gateway;
+package com.firecode.kabouros.webflux;
 
 import org.springframework.http.HttpStatus;
 

@@ -1,4 +1,4 @@
-package com.firecode.kabouros.gateway.support;
+package com.firecode.kabouros.webflux.support;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -33,7 +33,7 @@ import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.exc.InvalidDefinitionException;
 import com.firecode.kabouros.common.annotation.ResponseWrap;
-import com.firecode.kabouros.gateway.ResponseHelper;
+import com.firecode.kabouros.webflux.ResponseHelper;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

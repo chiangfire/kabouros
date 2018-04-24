@@ -1,4 +1,4 @@
-package com.firecode.kabouros.gateway.support;
+package com.firecode.kabouros.webflux.support;
 
 import java.util.Collections;
 import java.util.HashMap;

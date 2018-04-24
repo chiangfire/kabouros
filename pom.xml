@@ -48,7 +48,7 @@
 			</dependency>
 			<dependency>
 				<groupId>com.firecode</groupId>
-				<artifactId>kabouros-gateway</artifactId>
+				<artifactId>kabouros-webflux</artifactId>
 				<version>0.0.2-SNAPSHOT</version>
 			</dependency>
 		</dependencies>
@@ -191,6 +191,6 @@
 	<modules>
 		<module>kabouros-common</module>
 		<module>kabouros-cassandra</module>
-		<module>kabouros-gateway</module>
+		<module>kabouros-webflux</module>
 	</modules>
 </project>

@@ -1,4 +1,4 @@
-package com.firecode.kabouros.gateway.support;
+package com.firecode.kabouros.webflux.support;
 
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
@@ -17,7 +17,7 @@ import org.springframework.util.MimeType;
 import org.springframework.util.MimeTypeUtils;
 
 import com.firecode.kabouros.common.annotation.ResponseWrap;
-import com.firecode.kabouros.gateway.ResponseHelper;
+import com.firecode.kabouros.webflux.ResponseHelper;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

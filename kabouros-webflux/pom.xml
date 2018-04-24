@@ -8,9 +8,9 @@
 		<artifactId>kabouros</artifactId>
 		<version>0.0.2-SNAPSHOT</version>
 	</parent>
-	<artifactId>kabouros-gateway</artifactId>
+	<artifactId>kabouros-webflux</artifactId>
 	<packaging>jar</packaging>
-	<name>kabouros-gateway</name>
+	<name>kabouros-webflux</name>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
