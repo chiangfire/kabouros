@@ -27,6 +27,13 @@
 		<maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
 		<lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
 	</properties>
+	
+    <scm>
+	    <connection>scm:git:git://github.com/jiangcihuo/kabouros.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/jiangcihuo/kabouros.git</developerConnection>
+		<url>https://github.com/jiangcihuo/kabouros</url>
+		<tag>HEAD</tag>
+	</scm>
 
 	<dependencyManagement>
 		<dependencies>
@@ -172,8 +179,8 @@
 			<!-- release版本自动构建，构建流程如下： -->
 			<!-- mvn release:clean #清理 -->
 			<!-- 如果要创建分支的话执行： mvn release:branch -DbranchName=分支名称 -DupdateBranchVersions=true -DupdateWorkingCopyVersions=false -->
-				<!-- 比如指定分支名称为1.1.x，表示会有版本1.1.1，1.1.2等等，如果分支名称不是这个规范后面将改变不了版本号 -->
-				<!-- 接下来会提示修改版本号，比如修改成：1.1.1-SNAPSHOT -->
+				<!-- 比如指定分支名称为0.0.1.x，表示会有版本0.0.1.1，0.0.1.2等等，如果分支名称不是这个规范后面将改变不了版本号 -->
+				<!-- 接下来会提示修改版本号，比如修改成：0.0.1.1-SNAPSHOT -->
 			<!-- mvn release:prepare #准备发布打标签，这个时候会有一个交互过程。 -->
 			<!-- mvn release:perform #发布，打包 -->
 			<plugin>
