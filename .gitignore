@@ -16,3 +16,7 @@ target/
 *.ipr
 *.iml
 *.iws
+
+# maven-release-plugin
+*.releaseBackup
+release.properties

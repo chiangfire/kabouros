@@ -24,6 +24,7 @@
 		<maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
 		<maven-source-plugin.version>3.0.1</maven-source-plugin.version>
 		<maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
+		<maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
 		<lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
 	</properties>
 
@@ -157,6 +158,35 @@
 					<createChecksum>true</createChecksum>
 				</configuration>
 			</plugin>
+			<!-- 自动部署到远程仓库 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<retryFailedDeploymentCount>10</retryFailedDeploymentCount>
+					<!-- 跳过部署到远程仓库，如果有搭建私库就不要跳过了 -->
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+			<!-- 插件地址：http://maven.apache.org/maven-release/maven-release-plugin/index.html -->
+			<!-- release版本自动构建，构建流程如下： -->
+			<!-- mvn release:clean #清理 -->
+			<!-- 如果要创建分支的话执行： mvn release:branch -DbranchName=分支名称 -DupdateBranchVersions=true -DupdateWorkingCopyVersions=false -->
+				<!-- 比如指定分支名称为1.1.x，表示会有版本1.1.1，1.1.2等等，如果分支名称不是这个规范后面将改变不了版本号 -->
+				<!-- 接下来会提示修改版本号，比如修改成：1.1.1-SNAPSHOT -->
+			<!-- mvn release:prepare #准备发布打标签，这个时候会有一个交互过程。 -->
+			<!-- mvn release:perform #发布，打包 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<useReleaseProfile>false</useReleaseProfile>
+					<!-- 每个模块获得与父POM相同的版本 -->
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<tagNameFormat>v@{project.version}</tagNameFormat>
+				</configuration>
+			</plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>
@@ -187,7 +217,7 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	
+
 	<modules>
 		<module>kabouros-common</module>
 		<module>kabouros-cassandra</module>
