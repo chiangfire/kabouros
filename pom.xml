@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.firecode</groupId>
 	<artifactId>kabouros</artifactId>
-	<version>0.0.1-RELEASE</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -31,7 +31,7 @@
 	    <connection>scm:git:git://github.com/jiangcihuo/kabouros.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/jiangcihuo/kabouros.git</developerConnection>
 		<url>https://github.com/jiangcihuo/kabouros</url>
-		<tag>v0.0.1-RELEASE</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<dependencyManagement>
@@ -46,17 +46,17 @@
 			<dependency>
 				<groupId>com.firecode</groupId>
 				<artifactId>kabouros-common</artifactId>
-				<version>0.0.1-RELEASE</version>
+				<version>0.0.2-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>com.firecode</groupId>
 				<artifactId>kabouros-cassandra</artifactId>
-				<version>0.0.1-RELEASE</version>
+				<version>0.0.2-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>com.firecode</groupId>
 				<artifactId>kabouros-webflux</artifactId>
-				<version>0.0.1-RELEASE</version>
+				<version>0.0.2-SNAPSHOT</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
