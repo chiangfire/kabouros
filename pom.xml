@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -10,7 +9,7 @@
 	</parent>
 	<groupId>com.firecode</groupId>
 	<artifactId>kabouros</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -32,7 +31,7 @@
 	    <connection>scm:git:git://github.com/jiangcihuo/kabouros.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/jiangcihuo/kabouros.git</developerConnection>
 		<url>https://github.com/jiangcihuo/kabouros</url>
-		<tag>HEAD</tag>
+		<tag>0.0.1.x</tag>
 	</scm>
 
 	<dependencyManagement>
@@ -47,17 +46,17 @@
 			<dependency>
 				<groupId>com.firecode</groupId>
 				<artifactId>kabouros-common</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<version>0.0.1.1-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>com.firecode</groupId>
 				<artifactId>kabouros-cassandra</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<version>0.0.1.1-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>com.firecode</groupId>
 				<artifactId>kabouros-webflux</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<version>0.0.1.1-SNAPSHOT</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
