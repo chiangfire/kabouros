@@ -175,7 +175,7 @@
 				</configuration>
 			</plugin>
 			<!-- 插件地址：http://maven.apache.org/maven-release/maven-release-plugin/index.html -->
-			<!-- release版本自动构建，构建流程如下： -->
+			<!-- release版本自动构建<只能构建快照版本，即以-SNAPSHOT结尾的版本>，构建流程如下： -->
 			<!-- mvn release:clean #清理 -->
 			<!-- 如果要创建分支的话执行： mvn release:branch -DbranchName=分支名称 -DupdateBranchVersions=true -DupdateWorkingCopyVersions=false -->
 				<!-- 比如指定分支名称为0.0.1.x，表示会有版本0.0.1.1，0.0.1.2等等，如果分支名称不是这个规范后面将改变不了版本号 -->
