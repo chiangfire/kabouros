@@ -28,9 +28,9 @@
 	</properties>
 	
     <scm>
-	    <connection>scm:git:git://github.com/jiangcihuo/kabouros.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com/jiangcihuo/kabouros.git</developerConnection>
-		<url>https://github.com/jiangcihuo/kabouros</url>
+	    <connection>scm:git:git://github.com/chiangfire/kabouros.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/chiangfire/kabouros.git</developerConnection>
+		<url>https://github.com/chiangfire/kabouros</url>
 		<tag>HEAD</tag>
 	</scm>
 
