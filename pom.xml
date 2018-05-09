@@ -5,7 +5,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.0.0.RELEASE</version>
-		<relativePath />
+		<relativePath/>
 	</parent>
 	<groupId>com.firecode</groupId>
 	<artifactId>kabouros</artifactId>
@@ -39,7 +39,7 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Finchley.M9</version>
+				<version>Finchley.RC1</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -57,6 +57,11 @@
 				<groupId>com.firecode</groupId>
 				<artifactId>kabouros-webflux</artifactId>
 				<version>0.0.2-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.firecode</groupId>
+				<artifactId>kabouros-security</artifactId>
+			    <version>0.0.2-SNAPSHOT</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -140,7 +145,7 @@
 						<id>enforce</id>
 						<configuration>
 							<rules>
-								<dependencyConvergence />
+								<dependencyConvergence/>
 							</rules>
 						</configuration>
 						<goals>
@@ -213,7 +218,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore />
+										<ignore/>
 									</action>
 								</pluginExecution>
 							</pluginExecutions>
@@ -228,5 +233,6 @@
 		<module>kabouros-common</module>
 		<module>kabouros-cassandra</module>
 		<module>kabouros-webflux</module>
-	</modules>
+        <module>kabouros-security</module>
+    </modules>
 </project>
