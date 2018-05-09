@@ -6,7 +6,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.web.server.authorization.AuthorizationContext;
 
 import reactor.core.publisher.Mono;
-/**
+/*
  * 权限验证
  * 以拦截 Request 请求的方式过滤权限。
  * 如果想以拦截 "函数" 的方式过滤权限，可使用 @EnableReactiveMethodSecurity 拦截所有函数。
