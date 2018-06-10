@@ -45,6 +45,11 @@
 			</dependency>
 			<dependency>
 				<groupId>com.firecode</groupId>
+				<artifactId>kabouros-boot</artifactId>
+				<version>0.0.2-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.firecode</groupId>
 				<artifactId>kabouros-common</artifactId>
 				<version>0.0.2-SNAPSHOT</version>
 			</dependency>
@@ -110,19 +115,15 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
 		</dependency>
+	    <dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <scope>test</scope>
+	    </dependency>
 	</dependencies>
 
 	<build>
@@ -230,9 +231,10 @@
 	</build>
 
 	<modules>
+	    <module>kabouros-boot</module>
 		<module>kabouros-common</module>
 		<module>kabouros-cassandra</module>
 		<module>kabouros-webflux</module>
         <module>kabouros-security</module>
-    </modules>
+	</modules>
 </project>
