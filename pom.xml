@@ -135,6 +135,8 @@
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 					<showWarnings>true</showWarnings>
+					<!-- Open the parameter compiler -->
+					<parameters>true</parameters>
 				</configuration>
 			</plugin>
 			<plugin>
