@@ -68,6 +68,11 @@
 				<artifactId>kabouros-security</artifactId>
 			    <version>0.0.2-SNAPSHOT</version>
 			</dependency>
+			<dependency>
+				<groupId>com.firecode</groupId>
+				<artifactId>kabouros-jdbc</artifactId>
+				<version>0.0.2-SNAPSHOT</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -232,11 +237,12 @@
 		</pluginManagement>
 	</build>
 
-	<modules>
+    <modules>
 	    <module>kabouros-boot</module>
 		<module>kabouros-common</module>
 		<module>kabouros-cassandra</module>
 		<module>kabouros-webflux</module>
         <module>kabouros-security</module>
-	</modules>
+        <module>kabouros-jdbc</module>
+    </modules>
 </project>
